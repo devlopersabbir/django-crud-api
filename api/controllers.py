@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpRequest, HttpResponse, JsonResponse
+from django.http import HttpResponse, JsonResponse
+
 
 def getUsers (request):
     data = {
@@ -8,4 +9,4 @@ def getUsers (request):
         "password": "dev2020"
     }
     HttpResponse.status_code = 200
-    return JsonResponse(data)
+    return JsonResponse(data, safe=True)
